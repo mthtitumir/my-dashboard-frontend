@@ -10,6 +10,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const loadingToastId = toast.loading("Logging in .......");
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/users/login`,
@@ -19,16 +20,18 @@ const LoginPage = () => {
         }
       );
       const token = response?.data?.data?.accessToken;
-      console.log(token);
-
       if (token) {
-        localStorage.setItem("token", token);
-        navigate("/main/dashboard");
+        toast.dismiss(loadingToastId);
         toast.success("Login successful!");
+        localStorage.setItem("token", token);
+        navigate("/dashboard");
         setEmail("");
         setPassword("");
+      } else {
+        toast.dismiss(loadingToastId);
       }
     } catch (error) {
+      toast.dismiss(loadingToastId);
       toast.error("Invalid credentials!");
     }
   };
