@@ -8,6 +8,10 @@ body {
   @apply tracking-wide;
 }
 
+input, textarea{
+  @apply outline-none focus:border focus:border-sky-500 mt-1 px-3 py-2 block w-full bg-inherit border border-[#383838] rounded-md shadow-sm
+}
+
 .c-auto {
   @apply container mx-auto;
 }

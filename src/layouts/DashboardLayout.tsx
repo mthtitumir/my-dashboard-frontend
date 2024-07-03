@@ -27,7 +27,7 @@ const DashboardLayout = () => {
           {/* <div className="flex-shrink-0">
             <Navbar position="top" />
           </div> */}
-          <div className="flex-grow p-4 overflow-auto ">
+          <div className="flex-grow p-8 overflow-auto ">
             <Outlet />
           </div>
         </div>

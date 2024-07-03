@@ -25,7 +25,7 @@ const schema = yup.object().shape({
   content: yup.string().required("Content is required"),
 });
 
-const PostBlogForm: React.FC = () => {
+const AddNewBlog: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -52,7 +52,7 @@ const PostBlogForm: React.FC = () => {
           },
         }
       );
-      navigate("/dashboard/all-blogs"); // Redirect to the homepage or blogs page after successful submission
+      navigate("/dashboard/all-blogs");
     } catch (error) {
       console.error("Failed to submit blog post", error);
     }
@@ -70,7 +70,7 @@ const PostBlogForm: React.FC = () => {
             id="title"
             placeholder="Write the title of the blog"
             {...register("title")}
-            className={`mt-1 px-3 py-2 block w-full bg-inherit border-main rounded-md shadow-sm ${
+            className={`${
               errors.title ? "border-red-500" : ""
             }`}
           />
@@ -87,7 +87,7 @@ const PostBlogForm: React.FC = () => {
             id="banner"
             placeholder="Give the banner link"
             {...register("banner")}
-            className={`mt-1 px-3 py-2 block w-full bg-inherit border-main rounded-md shadow-sm ${
+            className={`  ${
               errors.banner ? "border-red-500" : ""
             }`}
           />
@@ -103,7 +103,7 @@ const PostBlogForm: React.FC = () => {
             id="tags"
             placeholder="Write the tags (separated with comma)"
             {...register("tags")}
-            className={`mt-1 px-3 py-2 block w-full bg-inherit border-main rounded-md shadow-sm ${
+            className={`  ${
               errors.tags ? "border-red-500" : ""
             }`}
           />
@@ -120,7 +120,7 @@ const PostBlogForm: React.FC = () => {
             id="shortDesc"
             placeholder="Write long description"
             {...register("shortDesc")}
-            className={`mt-1 px-3 py-2 block w-full bg-inherit border-main rounded-md shadow-sm ${
+            className={`  ${
               errors.shortDesc ? "border-red-500" : ""
             }`}
           />
@@ -137,7 +137,7 @@ const PostBlogForm: React.FC = () => {
             id="longDesc"
             placeholder="Write long description"
             {...register("longDesc")}
-            className="mt-1 px-3 py-2 block w-full bg-inherit border-main rounded-md shadow-sm"
+            className=" "
           />
         </div>
 
@@ -171,4 +171,4 @@ const PostBlogForm: React.FC = () => {
   );
 };
 
-export default PostBlogForm;
+export default AddNewBlog;
