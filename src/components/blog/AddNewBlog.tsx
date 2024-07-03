@@ -6,6 +6,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Headline from "../ui/Headline";
+import toast from "react-hot-toast";
 
 type BlogFormInputs = {
   title: string;
@@ -43,7 +44,7 @@ const AddNewBlog: React.FC = () => {
     console.log(processedData);
 
     try {
-      await axios.post(
+      const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/blogs`,
         processedData,
         {
@@ -52,14 +53,17 @@ const AddNewBlog: React.FC = () => {
           },
         }
       );
+      if(res.status==200) toast.success("Blog published successfully");
+      
       navigate("/dashboard/all-blogs");
     } catch (error) {
       console.error("Failed to submit blog post", error);
+      toast.error("Failed to post blog!");
     }
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 rounded-md bg-inherit">
+    <div className="max-w-4xl mx-auto rounded-md bg-inherit">
       <Headline text="Post A New Blog" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">

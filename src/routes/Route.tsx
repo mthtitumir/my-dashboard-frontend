@@ -5,6 +5,7 @@ import LoginPage from "../components/credentials/Login";
 import AllProjects from "../components/project/AllProjects";
 import AllBlogsPage from "../components/blog/AllBlogs";
 import AddNewBlog from "../components/blog/AddNewBlog";
+import AddNewProject from "../components/project/AddNewProject";
 
 const Router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const Router = createBrowserRouter([
       {
         path: "add-new-blog",
         element: <AddNewBlog />
+      },
+      {
+        path: "add-new-project",
+        element: <AddNewProject />
       },
     ],
   },

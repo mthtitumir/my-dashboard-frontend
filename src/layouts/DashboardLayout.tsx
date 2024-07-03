@@ -5,7 +5,6 @@ import { verifyToken } from "../utils/jwt";
 const DashboardLayout = () => {
   const token = localStorage.getItem("token");
   const data = verifyToken(token as string);
-  console.log(data);
   if (!data) {
     return (
       <div className="min-h-screen flex items-center justify-center text-red-600 text-2xl">
