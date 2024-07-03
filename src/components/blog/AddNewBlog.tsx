@@ -53,9 +53,10 @@ const AddNewBlog: React.FC = () => {
           },
         }
       );
-      if(res.status==200) toast.success("Blog published successfully");
-      
-      navigate("/dashboard/all-blogs");
+      if (res.status == 200) {
+        toast.success("Blog published successfully");
+        navigate("/dashboard/all-blogs");
+      } else toast.error(res.data.message);
     } catch (error) {
       console.error("Failed to submit blog post", error);
       toast.error("Failed to post blog!");
@@ -74,9 +75,7 @@ const AddNewBlog: React.FC = () => {
             id="title"
             placeholder="Write the title of the blog"
             {...register("title")}
-            className={`${
-              errors.title ? "border-red-500" : ""
-            }`}
+            className={`${errors.title ? "border-red-500" : ""}`}
           />
           {errors.title && (
             <p className="text-red-500 text-sm">{errors.title.message}</p>
@@ -91,9 +90,7 @@ const AddNewBlog: React.FC = () => {
             id="banner"
             placeholder="Give the banner link"
             {...register("banner")}
-            className={`  ${
-              errors.banner ? "border-red-500" : ""
-            }`}
+            className={`  ${errors.banner ? "border-red-500" : ""}`}
           />
           {errors.banner && (
             <p className="text-red-500 text-sm">{errors.banner.message}</p>
@@ -107,9 +104,7 @@ const AddNewBlog: React.FC = () => {
             id="tags"
             placeholder="Write the tags (separated with comma)"
             {...register("tags")}
-            className={`  ${
-              errors.tags ? "border-red-500" : ""
-            }`}
+            className={`  ${errors.tags ? "border-red-500" : ""}`}
           />
           {errors.tags && (
             <p className="text-red-500 text-sm">{errors.tags.message}</p>
@@ -124,9 +119,7 @@ const AddNewBlog: React.FC = () => {
             id="shortDesc"
             placeholder="Write long description"
             {...register("shortDesc")}
-            className={`  ${
-              errors.shortDesc ? "border-red-500" : ""
-            }`}
+            className={`  ${errors.shortDesc ? "border-red-500" : ""}`}
           />
           {errors.shortDesc && (
             <p className="text-red-500 text-sm">{errors.shortDesc.message}</p>

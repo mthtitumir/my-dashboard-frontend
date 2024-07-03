@@ -5,6 +5,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Headline from "../ui/Headline";
+import toast from "react-hot-toast";
 
 type ProjectFormInputs = {
   project_id: number;
@@ -62,14 +63,19 @@ const AddNewProject: React.FC = () => {
     console.log(processedData);
 
     try {
-      await axios.post("/api/project", data, {
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/projects`, data, {
         headers: {
           Authorization: token,
         },
       });
-      navigate("/projects"); // Redirect to the projects page after successful submission
+      console.log(res);      
+      if (res.status == 200) {
+        toast.success("New project added successfully");
+        navigate("/dashboard/all-projects");
+      } else toast.error(res.data.message);
     } catch (error) {
       console.error("Failed to submit project", error);
+      toast.error("Failed to add project!");
     }
   };
 
