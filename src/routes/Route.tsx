@@ -6,6 +6,9 @@ import AllProjects from "../components/project/AllProjects";
 import AllBlogsPage from "../components/blog/AllBlogs";
 import AddNewBlog from "../components/blog/AddNewBlog";
 import AddNewProject from "../components/project/AddNewProject";
+import AddNewExperience from "../components/experience/AddNewExperience";
+import AllExperiences from "../components/experience/AllExperience";
+import DashboardHome from "../components/ui/DashboardHome";
 
 const Router = createBrowserRouter([
   {
@@ -18,6 +21,10 @@ const Router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
+        path: "",
+        element: <DashboardHome />
+      },
+      {
         path: "all-projects",
         element: <AllProjects />
       },
@@ -26,12 +33,20 @@ const Router = createBrowserRouter([
         element: <AllBlogsPage />
       },
       {
+        path: "all-experiences",
+        element: <AllExperiences />
+      },
+      {
         path: "add-new-blog",
         element: <AddNewBlog />
       },
       {
         path: "add-new-project",
         element: <AddNewProject />
+      },
+      {
+        path: "add-new-experience",
+        element: <AddNewExperience />
       },
     ],
   },

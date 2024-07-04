@@ -3,11 +3,12 @@ import { IoPhonePortraitOutline, IoLocationOutline } from "react-icons/io5";
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagram, FaGithubSquare, FaRegLightbulb, FaAward, FaWhatsappSquare } from "react-icons/fa";
 import { SiCodeforces, SiReadthedocs } from "react-icons/si";
 import { TbWorld } from "react-icons/tb";
-import { MdOutlineMenuBook, MdManageAccounts, MdApps, MdOutlineLibraryBooks, MdOutlineHome } from "react-icons/md";
+import { MdOutlineMenuBook, MdManageAccounts, MdApps, MdOutlineLibraryBooks, MdOutlineHome, MdWorkOutline, MdOutlineWorkHistory } from "react-icons/md";
 import { PiDevToLogo } from "react-icons/pi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { LuBookPlus } from "react-icons/lu";
 import { AiOutlineAppstore, AiOutlineAppstoreAdd } from "react-icons/ai";
+import { RiDashboard2Line } from "react-icons/ri";
 
 
 export const icons = {
@@ -41,10 +42,13 @@ export const icons = {
         arrowUp: IoIosArrowUp,
     },
     dashboard: {
+        dashboard: RiDashboard2Line,
         blogs: MdOutlineLibraryBooks,
         projects: AiOutlineAppstore,
+        experiences: MdOutlineWorkHistory,
         newBlog: LuBookPlus,
         newProject: AiOutlineAppstoreAdd,
+        newExperience: MdWorkOutline,
         home: MdOutlineHome
     }
 }

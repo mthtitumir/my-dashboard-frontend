@@ -4,6 +4,11 @@ import { useLocation } from "react-router-dom";
 const DashboardSidebar = () => {
   const sidebarData = [
     {
+      icon: icons.dashboard.dashboard,
+      name: "Dashboard",
+      path: "/dashboard",
+    },
+    {
       icon: icons.dashboard.blogs,
       name: "All Blogs",
       path: "/dashboard/all-blogs",
@@ -14,6 +19,11 @@ const DashboardSidebar = () => {
       path: "/dashboard/all-projects",
     },
     {
+      icon: icons.dashboard.experiences,
+      name: "Experiences",
+      path: "/dashboard/all-experiences",
+    },
+    {
       icon: icons.dashboard.newBlog,
       name: "New Blog",
       path: "/dashboard/add-new-blog",
@@ -22,6 +32,11 @@ const DashboardSidebar = () => {
       icon: icons.dashboard.newProject,
       name: "New Project",
       path: "/dashboard/add-new-project",
+    },
+    {
+      icon: icons.dashboard.newExperience,
+      name: "New Exp.",
+      path: "/dashboard/add-new-experience",
     },
     {
       icon: icons.dashboard.home,
