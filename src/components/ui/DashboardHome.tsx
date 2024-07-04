@@ -52,7 +52,9 @@ const DashboardHome = () => {
   return (
     <div>
       <div>
-        <h1 className="text-3xl text-slate-200 pb-3">Welcome {userData?.name}💐</h1>
+        <h1 className="text-3xl text-slate-200 pb-3">
+          Welcome {userData?.name}💐
+        </h1>
       </div>
       <div className="grid grid-cols-12 gap-8 mt-5">
         {addData?.map((d) => (
