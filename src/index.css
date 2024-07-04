@@ -19,6 +19,9 @@ input, textarea{
 .border-main {
   @apply border border-[#383838];
 }
+.border-hover {
+  @apply hover:border hover:border-sky-500;
+}
 
 /* Webkit-based browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
