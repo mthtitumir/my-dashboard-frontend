@@ -8,8 +8,13 @@ const DashboardLayout = () => {
   const data = verifyToken(token as string);
   if (!data) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-red-600 text-2xl">
-        You Are Unauthorized 👿
+      <div className="min-h-screen flex flex-col gap-3 items-center justify-center text-red-600 text-2xl">
+        <h1>You Are Unauthorized 👿</h1>
+        <a href="/login">
+          <button className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none">
+            LOGIN
+          </button>
+        </a>
       </div>
     );
   }
