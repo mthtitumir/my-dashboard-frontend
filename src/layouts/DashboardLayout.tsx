@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../components/ui/DashboardSidebar";
 import { verifyToken } from "../utils/jwt";
+import ProfileToggle from "../components/ui/ProfileToggle";
 
 const DashboardLayout = () => {
   const token = localStorage.getItem("token");
@@ -22,7 +23,7 @@ const DashboardLayout = () => {
         {/* right box  */}
         <div className="col-span-12 lg:col-span-8 bg-[#0A192F] rounded-lg lg:rounded-lg border-main h-[calc(100vh-32px)] lg:h-[calc(100vh-64px)] flex flex-col relative">
           {/* navbar  */}
-          {/* <ProfileToggle /> */}
+          <ProfileToggle />
           {/* <div className="flex-shrink-0">
             <Navbar position="top" />
           </div> */}
