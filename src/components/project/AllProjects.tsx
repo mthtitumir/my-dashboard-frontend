@@ -4,7 +4,7 @@ import Headline from "../ui/Headline";
 
 const AllProjects = () => {
   const { data, loading, error } = useFetchData<TProject[]>(
-    `${import.meta.env.VITE_BACKEND_URL}/blogs`
+    `${import.meta.env.VITE_BACKEND_URL}/projects`
   );
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
